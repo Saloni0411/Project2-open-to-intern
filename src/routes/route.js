@@ -1,21 +1,15 @@
 const express = require('express');
 const router = express.Router();
-let authorcontroller = require('../controllers/authorController');
-const { create } = require('../models/authormodel');
-const blogController = require('../controllers/blogController')
+
+const collegeController=require('../controllers/collegeController')
+
+const interController=require('../controllers/interncontroller')
 
 
-router.post('/authors',authorcontroller.createauthor)
-router.post ('/createBlog',blogController.createBlog)
-router.get ('/getBlog',blogController.getBlog)
 
-router.put('/updateBlog/:blogId',blogController.updateBlog)
+router.post('/functionup/colleges',collegeController.createcollege)
 
-
-router.delete('/deleteBlog/:blogId',blogController.deleteBlog)
-router.delete('/deletebyquery',blogController.deletebyquery)
-
-
+router.post('/functionup/interns',interController.createIntern)
 
 module.exports = router;
 
