@@ -1,8 +1,18 @@
 const mongoose = require('mongoose')
 
 const CollegeSchema = new mongoose.Schema({
-	name: { type: String, required: true, trim :true, unique:true },
-	fullName: { type: String, required: true, trim :true, unique: true },
+	name: { 
+		type: String, 
+		required: true, 
+		trim :true, 
+		unique:true 
+	},
+	fullName: { 
+		type: String, 
+		required: true, 
+		trim :true, 
+		unique: true 
+	},
 	logoLink: {
 		type: String, 
         required: true,

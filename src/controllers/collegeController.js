@@ -36,14 +36,12 @@ let createCollege = async function(req, res){
     }
     
 } 
-
     catch (err){
     return res.status(500).send({ status: false, msg: err.message });
   }  
   
     
 }
-
 
 let collegeDetails= async function (req,res){
 
@@ -65,7 +63,7 @@ let collegeDetails= async function (req,res){
        return res.status(400).send({status:false,message:"college name already deleted"})
    }
    
-   let get={}
+    let get={}
     let result = await collegeModels.findOne({name:data.collegeName}).select({name:1,fullName:1,logoLink:1})
 
     get.name=result.name
@@ -74,7 +72,7 @@ let collegeDetails= async function (req,res){
   
     get.interests= await internmodel.find({collegeId:result._id}).select({_id:1,name:1,email:1,mobile:1})
 
-    res.status(200).send({status:true,data:get})
+    return res.status(200).send({status:true,data:get})
     }
     catch (err) {
         return res.status(500).send({ status: false, msg: err.message });
